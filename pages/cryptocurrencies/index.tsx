@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Cryptocurrencies } from "../../components";
 
-const Cryptocurrencies = () => {
-    return (
-        <div>
-           Cryptocurrencies
-        </div>
-    )
-}
+const CryptocurrenciesPage = () => {
+  return (
+    <>
+      <Cryptocurrencies simplified={false} />
+    </>
+  );
+};
 
-export default Cryptocurrencies;
+export default CryptocurrenciesPage;

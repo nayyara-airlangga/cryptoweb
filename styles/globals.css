@@ -42,6 +42,7 @@ a:hover {
 .main {
   flex: 0.8;
   width: 100%;
+  background-color: var(--bgSecondary);
 }
 
 .routes {

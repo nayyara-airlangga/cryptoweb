@@ -21,16 +21,16 @@ const Navbar = () => {
           {/* <Button className="menu-control-container"></Button> */}
         </div>
         <Menu theme="dark">
-          <Menu.Item icon={<HomeOutlined />}>
+          <Menu.Item key={0} icon={<HomeOutlined />}>
             <Link href="/">Home</Link>
           </Menu.Item>
-          <Menu.Item icon={<FundOutlined />}>
+          <Menu.Item key={1} icon={<FundOutlined />}>
             <Link href="/cryptocurrencies">Cryptocurrencies</Link>
           </Menu.Item>
-          <Menu.Item icon={<MoneyCollectOutlined />}>
+          <Menu.Item key={2} icon={<MoneyCollectOutlined />}>
             <Link href="/exchanges">Exchanges</Link>
           </Menu.Item>
-          <Menu.Item icon={<BulbOutlined />}>
+          <Menu.Item key={3} icon={<BulbOutlined />}>
             <Link href="/news">News</Link>
           </Menu.Item>
         </Menu>

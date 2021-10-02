@@ -3,7 +3,7 @@ import { Typography, Row, Col, Statistic } from "antd";
 import Link from "next/link";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import {Cryptocurrencies, News} from "../components"
+import { Cryptocurrencies, News } from "../components";
 import CryptoStats from "../ts/interfaces/CryptoStats";
 
 const { Title } = Typography;
@@ -56,16 +56,16 @@ const Home = () => {
           <Link href="/cryptocurrencies">Show More</Link>
         </Title>
       </div>
-      <Cryptocurrencies simplified/>
+      <Cryptocurrencies simplified />
       <div className="home-heading-container">
         <Title level={2} className="home-title">
-          Latest Cryptocurrencies
+          Latest Crypto News
         </Title>
         <Title level={3} className="show-more">
           <Link href="/news">Show More</Link>
         </Title>
       </div>
-      <News />
+      <News simplified />
     </>
   );
 };

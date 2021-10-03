@@ -272,7 +272,7 @@ a:hover {
 
 .coin-link:hover,
 .coin-stats:hover {
-  background-color: var(--bgSecondary);
+  background-color: var(--bgPrimary);
 }
 
 @media screen and (max-width: 1000px) {

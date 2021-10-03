@@ -17,7 +17,6 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // const getLayout = Component.getLayout ?? ((page) => page);
   return(
     <Provider store={store}>
       <Layout>

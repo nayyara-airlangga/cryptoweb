@@ -5,3 +5,4 @@ export { default as HomeLayout } from "./HomeLayout";
 export { default as Cryptocurrencies } from "./Cryptocurrencies";
 export { default as News } from "./News";
 export { default as LineGraph } from "./LineGraph";
+export { default as Loader } from "./Loader";

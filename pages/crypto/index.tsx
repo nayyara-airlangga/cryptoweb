@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { Loader } from "../../components";
 
 const CryptoDetails = () => {
   const [loaded, setLoaded] = useState(false);
@@ -10,7 +11,7 @@ const CryptoDetails = () => {
     else setLoaded(true);
   }, [router]);
 
-  if (!loaded) return <div>Loading...</div>; //show nothing or a loader
+  if (!loaded) return <Loader />;
 
   return <p>Finished</p>;
 };

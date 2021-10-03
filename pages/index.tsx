@@ -3,7 +3,7 @@ import { Typography, Row, Col, Statistic } from "antd";
 import Link from "next/link";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import { Cryptocurrencies, News } from "../components";
+import { Cryptocurrencies, News, Loader } from "../components";
 import CryptoStats from "../ts/interfaces/CryptoStats";
 
 const { Title } = Typography;
@@ -12,7 +12,7 @@ const Home = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats: CryptoStats = data?.data?.stats;
 
-  if (isFetching) return "Loading";
+  if (isFetching) return <Loader />;
 
   return (
     <>

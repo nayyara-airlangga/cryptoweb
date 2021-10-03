@@ -19,7 +19,7 @@ import {
   useGetCryptoDetailsQuery,
   useGetCryptoHistoryQuery,
 } from "../../services/cryptoApi";
-import { LineGraph } from "../../components";
+import { LineGraph, Loader } from "../../components";
 import CryptoInfo from "../../ts/interfaces/CryptoInfo";
 import GraphData, { CoinHistory } from "../../ts/interfaces/GraphData";
 
@@ -40,7 +40,7 @@ const CryptoDetails = () => {
 
   const times = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
-  if (!coinInfo) return <p>Loading...</p>;
+  if (!coinInfo) return <Loader />;
 
   const stats = [
     {

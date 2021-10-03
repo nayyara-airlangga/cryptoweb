@@ -3,6 +3,7 @@ import millify from "millify";
 import Link from "next/link";
 import { Card, Row, Col, Input } from "antd";
 
+import { Loader } from "../components";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import Coin from "../ts/interfaces/Coin";
 
@@ -23,7 +24,7 @@ const Cryptocurrencies = ({ simplified }: { simplified: boolean }) => {
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]);
 
-  if (isFetching) return <p>Loading...</p>;
+  if (isFetching) return <Loader />;
 
   return (
     <>

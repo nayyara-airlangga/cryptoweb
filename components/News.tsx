@@ -6,6 +6,7 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import CryptoNews from "../ts/interfaces/CryptoNews";
 import Coin from "../ts/interfaces/Coin";
+import { Loader } from "./";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -24,7 +25,7 @@ const News = ({ simplified }: { simplified: boolean }) => {
   const cryptocurrencies: Coin[] = data?.data?.coins;
   const cryptoNewsList: CryptoNews[] = cryptoNews?.value;
 
-  if (!cryptoNewsList || !cryptocurrencies) return <p>Loading...</p>;
+  if (!cryptoNewsList || !cryptocurrencies) return <Loader />;
 
   return (
     <>

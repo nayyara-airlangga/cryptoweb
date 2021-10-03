@@ -19,6 +19,7 @@ const Home = () => {
       <Title level={2} className="heading">
         Global Crypto Stats
       </Title>
+      <br />
       <Row>
         <Col span={12}>
           <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
@@ -52,10 +53,12 @@ const Home = () => {
         <Title level={2} className="home-title">
           The World&apos;s Top 10 Cryptocurrencies
         </Title>
+
         <Title level={3} className="show-more">
           <Link href="/cryptocurrencies">Show More</Link>
         </Title>
       </div>
+      <br />
       <Cryptocurrencies simplified />
       <div className="home-heading-container">
         <Title level={2} className="home-title">
@@ -65,6 +68,7 @@ const Home = () => {
           <Link href="/news">Show More</Link>
         </Title>
       </div>
+      <br />
       <News simplified />
     </>
   );

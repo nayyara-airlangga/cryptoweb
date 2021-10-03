@@ -27,73 +27,78 @@ const News = ({ simplified }: { simplified: boolean }) => {
   if (!cryptoNewsList || !cryptocurrencies) return <p>Loading...</p>;
 
   return (
-    <Row gutter={[24, 24]}>
-      {!simplified && (
-        <Col span={24}>
-          <Select
-            showSearch
-            className="select-news"
-            placeholder="Select a category"
-            optionFilterProp="children"
-            onChange={(value) => setNewsCategory(value as string)}
-            filterOption={(input, option) =>
-              option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
-          >
-            <Option value="Cryptocurrency">Cryptocurrency</Option>
-            {cryptocurrencies.map((coin) => (
-              <Option key={coin.id} value={coin.name}>
-                {coin.name}
-              </Option>
-            ))}
-          </Select>
-        </Col>
-      )}
-      {cryptoNewsList.map((news, index: number) => (
-        <Col key={index} xs={24} sm={12} lg={8}>
-          <Card hoverable className="news-card">
-            <a href={news.url} target="_blank" rel="noreferrer">
-              <div className="news-image-container">
-                <Title className="news-title" level={4}>
-                  {news.name}
-                </Title>
-                <img
-                  style={{
-                    margin: "10px 0px 10px 15px",
-                    maxHeight: "150px",
-                    maxWidth: "150px",
-                  }}
-                  src={news?.image?.thumbnail?.contentUrl || demoImage}
-                  alt="news-image"
-                />
-              </div>
-              <br />
-              <p>
-                {news.description.length > 300
-                  ? `${news.description.substring(0, 300)}...`
-                  : news.description}
-              </p>
-              <br />
-              <div className="provider-container">
-                <div>
-                  <Avatar
-                    src={
-                      news.provider[0]?.image?.thumbnail?.contentUrl ||
-                      demoImage
-                    }
-                    alt="news-provider"
+    <>
+      <Row gutter={[24, 24]}>
+        {!simplified && (
+          <Col span={24}>
+            <Select
+              showSearch
+              className="select-news"
+              placeholder="Select a category"
+              optionFilterProp="children"
+              onChange={(value) => setNewsCategory(value as string)}
+              filterOption={(input, option) =>
+                option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+            >
+              <Option value="Cryptocurrency">Cryptocurrency</Option>
+              {cryptocurrencies.map((coin) => (
+                <Option key={coin.id} value={coin.name}>
+                  {coin.name}
+                </Option>
+              ))}
+            </Select>
+          </Col>
+        )}
+        {cryptoNewsList.map((news, index: number) => (
+          <Col key={index} xs={24} sm={12} lg={8}>
+            <Card hoverable className="news-card">
+              <a href={news.url} target="_blank" rel="noreferrer">
+                <div className="news-image-container">
+                  <Title className="news-title" level={4}>
+                    {news.name}
+                  </Title>
+                  <img
+                    style={{
+                      margin: "10px 0px 10px 15px",
+                      maxHeight: "150px",
+                      maxWidth: "150px",
+                    }}
+                    src={news?.image?.thumbnail?.contentUrl || demoImage}
+                    alt="news-image"
                   />
-                  <Text className="provider-name">
-                    {news.provider[0]?.name}
+                </div>
+                <br />
+                <p>
+                  {news.description.length > 300
+                    ? `${news.description.substring(0, 300)}...`
+                    : news.description}
+                </p>
+                <br />
+                <div className="provider-container">
+                  <div>
+                    <Avatar
+                      src={
+                        news.provider[0]?.image?.thumbnail?.contentUrl ||
+                        demoImage
+                      }
+                      alt="news-provider"
+                    />
+                    <Text className="provider-name">
+                      {news.provider[0]?.name}
+                    </Text>
+                  </div>
+                  <Text>
+                    {moment(news.datePublished).startOf("s").fromNow()}
                   </Text>
                 </div>
-                <Text>{moment(news.datePublished).startOf("s").fromNow()}</Text>
-              </div>
-            </a>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+              </a>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+      <br />
+    </>
   );
 };
 

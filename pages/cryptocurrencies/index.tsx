@@ -5,6 +5,7 @@ const CryptocurrenciesPage = () => {
   return (
     <>
       <Cryptocurrencies simplified={false} />
+      <br />
     </>
   );
 };
